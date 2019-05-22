@@ -3,5 +3,11 @@
 {% block title %}Weather APP{% endblock %}
 
 {% block content %}
-    Hello world!
+    <strong>Location:</strong> {{ data.name }}<br />
+    <strong>Temperature:</strong> {{ data.main.temp }} C<br />
+    <strong>Description:</strong> {{ data.weather[0].description }}<br />
+    <img src="
+    http://openweathermap.org/img/w/{{ data.weather[0].icon }}.png
+    " alt="." />
+    <strong>Wind speed:</strong> {{ data.wind.speed }} m/s
 {% endblock %}

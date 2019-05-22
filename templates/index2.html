@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Weather APP{% endblock %}
+
+{% block content %}
+<br />
+<div class="row mt-2">
+    <div class="col-12">
+        <div class="list-group">
+            {% for item in items %}
+                {% include 'message.html' %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <form action="/send-message" method="post">
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea class="form-control" name="message" rows="3"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-right">Send</button>
+            </form>
+          </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
